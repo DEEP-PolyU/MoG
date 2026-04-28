@@ -1,0 +1,27 @@
+# Core
+openai==2.3.0
+python-dotenv==1.1.1
+requests==2.32.5
+PyYAML==6.0.3
+tqdm==4.67.1
+json_repair==0.52.0
+tiktoken==0.12.0
+
+# Numerical & ML
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.7.2
+networkx==3.4.2
+
+# NLP / embeddings
+spacy==3.8.7
+sentence-transformers==5.1.1
+transformers==4.57.0
+torch==2.10.0
+
+# Vector index (CPU; replace with faiss-gpu if you have CUDA)
+faiss-cpu==1.12.0
+
+# Utilities
+psutil==7.1.2
+Pympler==1.1
