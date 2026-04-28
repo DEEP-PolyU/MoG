@@ -1,0 +1,41 @@
+{
+    "Nodes": [
+        "person",
+        "location",
+        "organization",
+        "event",
+        "object",
+        "concept",
+        "time_period",
+        "creative_work",
+        "biological_entity",
+        "natural_phenomenon"
+    ],
+    "Relations": [
+        "is_a",
+        "part_of",
+        "located_in",
+        "created_by",
+        "used_by",
+        "participates_in",
+        "related_to",
+        "belongs_to",
+        "influences",
+        "precedes",
+        "arrives_in",
+        "comparable_to"
+    ],
+    "Attributes": [
+        "name",
+        "date",
+        "size",
+        "type",
+        "description",
+        "status",
+        "quantity",
+        "value",
+        "position",
+        "duration",
+        "time"
+    ]
+}
