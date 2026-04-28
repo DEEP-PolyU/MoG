@@ -1,6 +1,6 @@
 # MoG: Mixture of Experts for Graph-Augmented Complex Reasoning
 
-This is the official codebase for **MoG**. It organizes knowledge into **always-on hub graphs** and **sparsely activated expert graphs**, and uses a **topology-aware router** to confine retrieval to a focused evidence subspace — achieving state-of-the-art performance on multi-hop complex reasoning.
+This is the official codebase for **MoG**. It organizes knowledge into **always-on hub graphs** and **sparsely activated expert graphs**, and uses a **non-parametric topology-aware router** to confine retrieval to a focused evidence subspace — achieving state-of-the-art performance on multi-hop complex reasoning.
 
 <p align="center">
   <img src="content/MoG_main.png" alt="MoG framework" width="92%"/>
@@ -9,8 +9,9 @@ This is the official codebase for **MoG**. It organizes knowledge into **always-
 ## Highlights
 
 - **Hub + Expert dual view of a KG.** Hubs capture broadly useful, structurally central knowledge; experts capture domain-specific, semantically coherent subsets — entities can belong to multiple hubs/experts.
-- **Topology-aware router.** No extra training: the router uses retrieved entities, their KG neighbors, and expert membership to activate experts per (sub-)query.
+- **Non-parametric topology-aware router.** No extra training: the router uses retrieved entities, their KG neighbors, and expert membership to top-*k* activate experts per (sub-)query.
 - **SOTA on multi-hop QA.** On the most challenging MuSiQue, MoG yields **>20% relative improvement** over the strongest GraphRAG baselines.
+- **Faster too.** Conditional activation shrinks the retrieval space, giving lower end-to-end latency than dense graph baselines.
 
 ## Repository Layout
 
