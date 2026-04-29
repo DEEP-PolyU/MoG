@@ -1,6 +1,6 @@
 # MoG: Mixture of Experts for Graph-Augmented Complex Reasoning
 
-This is the official codebase for **MoG**. It organizes knowledge into **always-on hub graphs** and **sparsely activated expert graphs**, and uses a **non-parametric topology-aware router** to confine retrieval to a focused evidence subspace — achieving state-of-the-art performance on multi-hop complex reasoning.
+This is the official codebase for **MoG**. It organizes knowledge into **always-on hub graphs** and **sparsely activated expert graphs**, and uses a **topology-aware router** to confine retrieval to a focused evidence subspace — achieving state-of-the-art performance on multi-hop complex reasoning.
 
 <p align="center">
   <img src="content/MoG_main.png" alt="MoG framework" width="92%"/>
@@ -9,9 +9,8 @@ This is the official codebase for **MoG**. It organizes knowledge into **always-
 ## Highlights
 
 - **Hub + Expert dual view of a KG.** Hubs capture broadly useful, structurally central knowledge; experts capture domain-specific, semantically coherent subsets — entities can belong to multiple hubs/experts.
-- **Non-parametric topology-aware router.** No extra training: the router uses retrieved entities, their KG neighbors, and expert membership to top-*k* activate experts per (sub-)query.
+- **Topology-aware router.** No extra training: the router uses retrieved entities, their KG neighbors, and expert membership to top-*k* activate experts per (sub-)query.
 - **SOTA on multi-hop QA.** On the most challenging MuSiQue, MoG yields **>20% relative improvement** over the strongest GraphRAG baselines.
-- **Faster too.** Conditional activation shrinks the retrieval space, giving lower end-to-end latency than dense graph baselines.
 
 ## Repository Layout
 
@@ -38,7 +37,7 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_lg
 ```
 
-Configure your LLM in `llm.env`. We use **DeepSeek-V3-0324** by default:
+Configure your LLM in `llm.env`. We use deepseek-v3-0324 by default:
 
 ```ini
 LLM_MODEL=deepseek-chat          # deepseek-v3-0324
@@ -70,7 +69,7 @@ huggingface-cli download noel7Y/mog-graphrag \
   --repo-type dataset --local-dir . --local-dir-use-symlinks False
 ```
 
-> With `output/` downloaded you can **skip construction** and jump straight to retrieval to reproduce the answers.
+> With `output/` downloaded you can **skip construction** and jump straight to retrieval and QA to reproduce the answers.
 
 ## Quick Start
 
