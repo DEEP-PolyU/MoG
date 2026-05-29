@@ -1,4 +1,4 @@
-# MoG: Mixture of Experts for Graph-Augmented Complex Reasoning
+# MoG: Mixture of Experts for Graph-based Retrieval-Augmented Generation
 
 This is the official codebase for **MoG**. It organizes knowledge into **always-on hub graphs** and **sparsely activated expert graphs**, and uses a **topology-aware router** to confine retrieval to a focused evidence subspace — achieving state-of-the-art performance on multi-hop complex reasoning with LLMs.
 
@@ -9,7 +9,7 @@ This is the official codebase for **MoG**. It organizes knowledge into **always-
 ## Highlights
 
 - **Hub + Expert dual view of a KG.** Hubs capture broadly useful, structurally central knowledge; experts capture domain-specific, semantically coherent subsets — entities can belong to multiple hubs/experts.
-- **Topology-aware router.** No extra training: the router uses retrieved entities, their KG neighbors, and expert membership to top-*k* activate experts per (sub-)query.
+- **Topology-aware router.** The router uses retrieved entities, their KG neighbors, and expert membership to activate a small subset of experts per (sub-)query for focused retrieval.
 - **SOTA on multi-hop QA with LLMs.** On the most challenging MuSiQue, MoG yields **>20% relative improvement** over the strongest GraphRAG baselines.
 
 ## Repository Layout
@@ -27,7 +27,6 @@ mog/
 ├── schemas/                    # Per-dataset schemas
 └── content/                    # Figures and paper
 ```
-
 ## Setup
 
 ```bash
@@ -55,7 +54,8 @@ LLM_API_KEY=sk-xxx
 
 ## Datasets & Pre-built Artifacts
 
-We release everything you need on Hugging Face:
+
+We use the same public datasets (HotpotQA, 2Wiki, MuSiQue, and GraphRAG-Bench) from baselines [HippoRAG2](https://github.com/osu-nlp-group/hipporag) and [Youtu-GraphRAG](https://github.com/TencentCloudADP/youtu-graphrag). We release the related files on Hugging Face:
 
 | Folder | Content | Link |
 |---|---|---|
@@ -99,6 +99,7 @@ python main.py --config config/mog_config.yaml \
 
 If you downloaded the HF `output/` folder, **only step 3 (or 3') is needed**.
 
+
 ## Main Results (DeepSeek-V3)
 
 Multi-hop QA accuracy (LLM-Acc / Match-Acc); best in **bold**, runner-up <ins>underlined</ins>.
@@ -113,7 +114,7 @@ Multi-hop QA accuracy (LLM-Acc / Match-Acc); best in **bold**, runner-up <ins>un
 
 → Up to **+25.4%** relative LLM-Acc and **+28.8%** relative Match-Acc on MuSiQue. See the paper for full tables (incl. GPT-4o-mini, ablations and efficiency analysis).
 
-## Citation
+<!-- ## Citation
 
 ```bibtex
 @article{mog2026,
@@ -122,7 +123,7 @@ Multi-hop QA accuracy (LLM-Acc / Match-Acc); best in **bold**, runner-up <ins>un
   year    = {2026},
   note    = {Preprint}
 }
-```
+``` -->
 
 ## Acknowledgements
 

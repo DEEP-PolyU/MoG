@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ============================================================
-# MoG (Mixture of Experts for Graph-Augmented Complex Reasoning)
+# MoG
 # Pipeline execution script
 # Usage: Uncomment the commands for the dataset/stage you need.
 # ============================================================
@@ -65,3 +65,18 @@
 
 # python main.py --config config/mog_config.yaml --override '{"triggers": {"constructor_trigger": false, "retrieve_trigger": true}}' \
 #   --datasets musique --retrieval_mode MoGRetrieval_irCoT-5 --construction_mode MoGBuild
+
+# -------------------- graphrag-bench --------------------
+
+
+# python main.py --config config/mog_config.yaml --override '{"triggers": {"constructor_trigger": true, "retrieve_trigger": false}}' \
+#   --datasets graphrag-bench --construction_mode KGPreprocess
+
+# python main.py --config config/mog_config.yaml --override '{"triggers": {"constructor_trigger": true, "retrieve_trigger": false}}' \
+#   --datasets graphrag-bench --construction_mode MoGBuild
+
+# python main.py --config config/mog_config.yaml --override '{"triggers": {"constructor_trigger": false, "retrieve_trigger": true}}' \
+#   --datasets graphrag-bench --retrieval_mode MoGRetrieval --construction_mode MoGBuild
+
+# python main.py --config config/mog_config.yaml --override '{"triggers": {"constructor_trigger": false, "retrieve_trigger": true}}' \
+#   --datasets graphrag-bench --retrieval_mode MoGRetrieval_irCoT-5 --construction_mode MoGBuild

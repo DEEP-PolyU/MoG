@@ -22,7 +22,7 @@ class ColoredFormatter(logging.Formatter):
             return f"{color}{formatted}{COLORS['RESET']}"
         return formatted
 
-def setup_logger(name: str = "youtu-graphrag", 
+def setup_logger(name: str = "mog", 
                 level: int = logging.INFO,
                 log_file: Optional[str] = None) -> logging.Logger:
     logger = logging.getLogger(name)

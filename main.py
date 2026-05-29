@@ -70,7 +70,6 @@ def parse_arguments():
 def setup_environment(config: ConfigManager):
     config.create_output_directories()
     
-    logger.info("Youtu-GraphRAG initialized")
     logger.info(f"Constructor enabled: {config.triggers.constructor_trigger}")
     logger.info(f"Retriever enabled: {config.triggers.retrieve_trigger}")
 

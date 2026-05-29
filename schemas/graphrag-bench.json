@@ -1,0 +1,38 @@
+{
+    "Nodes": [
+        "concept",
+        "prerequisite",
+        "formula",
+        "theorem",
+        "method",
+        "diagram",
+        "equation",
+        "topic"
+    ],
+    "Relations": [
+        "requires",
+        "is_part_of",
+        "contains",
+        "illustrates",
+        "explains",
+        "proves",
+        "applies_to",
+        "uses",
+        "is_example_of",
+        "solves",
+        "is_defined_in",
+        "references",
+        "builds_upon"
+    ],
+    "Attributes": [
+        "title",
+        "name",
+        "description",
+        "expression",
+        "definition",
+        "example",
+        "instructions",
+        "example",
+        "exercise"
+    ]
+}
